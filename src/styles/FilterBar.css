@@ -1,0 +1,23 @@
+.filter-bar {
+  padding: 1em 1em 0 1em;
+  .radio-group-status {
+    .radio-btn {
+      background-color: white;
+      margin: 0.5rem;
+      border-radius: 1rem;
+    }
+    .radio-btn.checked,
+    .radio-btn:hover {
+      color: white;
+      font-weight: 700;
+      background-color: rgb(20, 20, 20);
+      border: none;
+    }
+    /* .radio-btn:hover {
+      background-color: rgba(20, 20, 20);
+      font-weight: 700;
+      color: white;
+      border: none;
+    } */
+  }
+}
