@@ -1,0 +1,25 @@
+.summary-card {
+  display: flex;
+  align-items: flex-center;
+  border: 1px solid rgb(216, 216, 216);
+  border-radius: 1rem;
+  gap: 1rem;
+  padding: 1rem;
+  .details {
+    .status {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgb(106, 104, 104);
+    }
+    .count {
+      font-size: 2rem;
+      font-weight: bolder;
+    }
+  }
+  .graph {
+    .graph-percent {
+      font-weight: 500;
+      font-size: 0.7rem;
+    }
+  }
+}
