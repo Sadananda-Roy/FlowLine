@@ -1,0 +1,25 @@
+.task-card {
+  border: 1px solid #dee4e0;
+  background-color: #f3f5f2;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  .title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .description {
+    padding-top: 1rem;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    .action-buttons {
+      .edit {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}

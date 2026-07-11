@@ -1,29 +1,21 @@
-// import { useSelector, useDispatch } from "react-redux";
-// import { addTask } from "../features/tasks/taskSlice";
+import { useState } from "react";
 import FilterBar from "../components/FilterBar";
 import SummaryBar from "../components/SummaryCards/SummaryBar";
+import TaskList from "../components/TaskList";
 import "../styles/AllTasks.css";
+import { TASK_STATUS } from "../constants/taskStatus";
 
 const AllTasks = () => {
-  // const tasks = useSelector((state) => state.tasks.list);
-  // const dispatch = useDispatch();
-
-  // const samplePayload = {
-  //   id: 21,
-  //   title: "Testing Redux Toolkit",
-  //   description: "Redux Toolkit setup done. Needs Testing",
-  //   status: "Pending",
-  //   dueDate: "2026-07-26",
-  // };
-
-  // const addNewTask = () => {
-  //   dispatch(addTask(samplePayload));
-  // };
+  const [statusFilter, setStatusFilter] = useState(TASK_STATUS.ALL);
+  const changeFilter = (e) => {
+    setStatusFilter(e.target.value);
+  };
 
   return (
     <div className="all-tasks">
       <SummaryBar />
-      <FilterBar />
+      <FilterBar statusFilter={statusFilter} changeFilter={changeFilter} />
+      <TaskList />
     </div>
   );
 };
