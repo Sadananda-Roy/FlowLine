@@ -20,12 +20,12 @@ const AllTasks = () => {
 
   return (
     <div>
-      <Button type="primary" onClick={addNewTask}>
+      {/* <Button type="primary" onClick={addNewTask}>
         Click
       </Button>
       {tasks.map((item, index) => {
         return <p key={item.title + index}>{item.title}</p>;
-      })}
+      })} */}
     </div>
   );
 };

@@ -1,0 +1,51 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+  height: 5rem;
+  border: 1px solid black;
+  .logo {
+    display: flex;
+    align-items: center;
+    h1 {
+      letter-spacing: 4px;
+    }
+  }
+  .navigate-tabs {
+    background-color: rgb(236, 235, 235);
+    border-radius: 1em;
+    padding: 0.5rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    .tab-btn {
+      letter-spacing: 1px;
+      color: grey;
+      background-color: rgb(236, 235, 235);
+      border-radius: 0.5em;
+      border: none;
+      transition: none;
+    }
+    .tab-btn.active {
+      font-weight: bolder;
+      color: black;
+      background-color: white;
+    }
+    /* .nav-btn:hover,
+    .nav-btn:focus,
+    .nav-btn:active {
+      transform: none;
+    } */
+    .tab-btn:hover {
+      border: none !important;
+      color: black !important;
+    }
+  }
+  .new-task-btn {
+    background-color: green;
+    border-radius: 0.7em;
+  }
+}
