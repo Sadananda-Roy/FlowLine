@@ -1,8 +1,14 @@
 import { Radio, Row, Select } from "antd";
 import { TASK_STATUS_OPTIONS } from "../constants/taskStatus";
 import "../styles/FilterBar.css";
+import { SORT_ORDER_OPTIONS } from "../constants/sortOrder";
 
-const FilterBar = ({ statusFilter, changeStatusFilter }) => {
+const FilterBar = ({
+  statusFilter,
+  changeStatusFilter,
+  changeSortFilter,
+  sortOrder,
+}) => {
   return (
     <Row className="filter-bar">
       <Radio.Group
@@ -13,8 +19,8 @@ const FilterBar = ({ statusFilter, changeStatusFilter }) => {
         {TASK_STATUS_OPTIONS.map((item) => (
           <Radio.Button
             className={`radio-btn ${item === statusFilter ? "checked" : ""}`}
-            value={statusFilter}
-            key={statusFilter}
+            value={item}
+            key={item}
           >
             {item}
           </Radio.Button>
@@ -25,13 +31,10 @@ const FilterBar = ({ statusFilter, changeStatusFilter }) => {
         <Select
           className="input-select"
           size="small"
-          defaultValue="due_asc"
+          value={sortOrder}
           style={{ width: 150 }}
-          //   onChange={handleChange}
-          options={[
-            { value: "due_asc", label: "Due date - Asc" },
-            { value: "due_desc", label: "Due date - Desc" },
-          ]}
+          onChange={changeSortFilter}
+          options={SORT_ORDER_OPTIONS}
         />
       </div>
     </Row>

@@ -4,18 +4,33 @@ import SummaryBar from "../components/SummaryCards/SummaryBar";
 import TaskList from "../components/TaskList";
 import "../styles/AllTasks.css";
 import { TASK_STATUS } from "../constants/taskStatus";
+import { useSelector } from "react-redux";
+import { SORT_ORDER } from "../constants/sortOrder";
+import { filterTasks, sortTasks } from "../utils/taskUtils";
 
 const AllTasks = () => {
+  const allTasks = useSelector((state) => state.tasks.list);
   const [statusFilter, setStatusFilter] = useState(TASK_STATUS.ALL);
-  const changeFilter = (e) => {
+  const [sortOrder, setSortOrder] = useState(SORT_ORDER.NONE);
+
+  const changeStatusFilter = (e) => {
     setStatusFilter(e.target.value);
   };
+
+  const filteredTasks = filterTasks(allTasks, statusFilter);
+
+  const sortedTasks = sortTasks([...filteredTasks], sortOrder);
 
   return (
     <div className="all-tasks">
       <SummaryBar />
-      <FilterBar statusFilter={statusFilter} changeFilter={changeFilter} />
-      <TaskList />
+      <FilterBar
+        statusFilter={statusFilter}
+        changeStatusFilter={changeStatusFilter}
+        sortOrder={sortOrder}
+        changeSortFilter={setSortOrder}
+      />
+      <TaskList tasks={sortedTasks} />
     </div>
   );
 };
