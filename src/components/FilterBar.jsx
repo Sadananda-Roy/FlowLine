@@ -1,4 +1,4 @@
-import { Radio } from "antd";
+import { Radio, Row, Select } from "antd";
 import { TASK_STATUS, TASK_STATUS_OPTIONS } from "../constants/taskStatus";
 import "../styles/FilterBar.css";
 import { useState } from "react";
@@ -9,7 +9,7 @@ const FilterBar = () => {
     setStatusFilter(e.target.value);
   };
   return (
-    <div className="filter-bar">
+    <Row className="filter-bar">
       <Radio.Group
         className="radio-group-status"
         defaultValue={statusFilter}
@@ -25,7 +25,21 @@ const FilterBar = () => {
           </Radio.Button>
         ))}
       </Radio.Group>
-    </div>
+      <div className="sortby-container">
+        <label>Sort by</label>
+        <Select
+          className="input-select"
+          size="small"
+          defaultValue="due_asc"
+          style={{ width: 150 }}
+          //   onChange={handleChange}
+          options={[
+            { value: "due_asc", label: "Due date - Asc" },
+            { value: "due_desc", label: "Due date - Desc" },
+          ]}
+        />
+      </div>
+    </Row>
   );
 };
 
