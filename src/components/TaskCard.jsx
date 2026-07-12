@@ -1,9 +1,10 @@
-import { Button } from "antd";
+import { Button, Col, Row } from "antd";
 import "../styles/TaskCard.css";
 import StatusPill from "./ui/StatusPill";
 import { DeleteFilled, EditFilled } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
 import { deleteTask } from "../features/tasks/taskSlice";
+import { getRemainingTime } from "../utils/date";
 
 const TaskCard = ({ data, setModalState }) => {
   const dispatch = useDispatch();
@@ -15,13 +16,20 @@ const TaskCard = ({ data, setModalState }) => {
   };
   return (
     <div className="task-card">
-      <div className="title-container">
-        <div className="title">{data.title}</div>
-        <StatusPill status={data.status} />
-      </div>
+      <Row className="title-container">
+        <Col className="title" span={15}>
+          {data.title}
+        </Col>
+        <Col span={9} className="status">
+          <StatusPill status={data.status} />
+        </Col>
+      </Row>
       <div className="description">{data.description}</div>
       <div className="footer">
-        <div className="due-date">Due {data.dueDate}</div>
+        <div className="due-date">
+          <div className="due">Due {data.dueDate}</div>
+          <div className="remaining-time">{getRemainingTime(data.dueDate)}</div>
+        </div>
         <div className="action-buttons">
           <Button
             className="edit"

@@ -10,27 +10,44 @@ const Navbar = ({ onAddTask }) => {
   const currRoute = location.pathname;
   return (
     <Row className="navbar-container">
-      <Col className="logo">
+      <Col
+        className="logo"
+        xs={{ span: 12, order: 1 }}
+        lg={{ span: 8, order: 1 }}
+        xl={{ span: 8, order: 1 }}
+      >
         <Image width={60} src={FlowLineLogo} alt="Flowline Logo" />
         <h1>Flowline</h1>
       </Col>
-      <Col className="navigate-tabs">
-        <Button
-          className={`tab-btn all ${currRoute === "/" ? "active" : ""}`}
-          size="medium"
-          onClick={() => navigate("/")}
-        >
-          All Tasks
-        </Button>
-        <Button
-          className={`tab-btn completed ${currRoute === "/completed" ? "active" : ""}`}
-          size="medium"
-          onClick={() => navigate("/completed")}
-        >
-          Completed Tasks
-        </Button>
+      <Col
+        className="navigate-tabs"
+        xs={{ span: 24, order: 3 }}
+        lg={{ span: 8, order: 2 }}
+        xl={{ span: 8, order: 2 }}
+      >
+        <div className="btn-wrapper">
+          <Button
+            className={`tab-btn all ${currRoute === "/" ? "active" : ""}`}
+            size="medium"
+            onClick={() => navigate("/")}
+          >
+            All Tasks
+          </Button>
+          <Button
+            className={`tab-btn completed ${currRoute === "/completed" ? "active" : ""}`}
+            size="medium"
+            onClick={() => navigate("/completed")}
+          >
+            Completed Tasks
+          </Button>
+        </div>
       </Col>
-      <Col>
+      <Col
+        className="new-task-btn-container"
+        xs={{ span: 12, order: 2 }}
+        lg={{ span: 8, order: 3 }}
+        xl={{ span: 8, order: 3 }}
+      >
         <Button
           size="large"
           className="new-task-btn"

@@ -10,6 +10,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .status {
+      text-align: right;
+    }
   }
   .description {
     padding-top: 1rem;
@@ -17,7 +20,7 @@
   .footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
     padding-top: 1rem;
     .action-buttons {
       .edit {

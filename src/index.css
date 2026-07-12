@@ -1,7 +1,12 @@
-/* body {
-  padding: 0;
-  margin: 0;
-} */
+:root {
+  --navbar-height: 5rem;
+}
+@media (max-width: 575px) {
+  :root {
+    --navbar-height: 4rem;
+  }
+}
+
 * {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
