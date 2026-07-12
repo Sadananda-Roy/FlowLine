@@ -1,3 +1,9 @@
 .summary-bar {
-  padding: 2rem 5rem 2rem 5rem;
+  padding: 2rem 5rem;
+}
+
+@media (max-width: 401px) {
+  .summary-bar {
+    padding: 2rem 1rem;
+  }
 }

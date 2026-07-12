@@ -10,6 +10,7 @@
   /* border-bottom: 1px solid #f0f0f0; */
   align-items: center;
   .radio-group-status {
+    text-align: center;
     .radio-btn {
       background-color: #f3f5f2;
       margin: 0.2rem;

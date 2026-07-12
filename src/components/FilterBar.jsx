@@ -19,7 +19,7 @@ const FilterBar = ({
         className="status-container"
         xs={{ span: 24, order: 2 }}
         md={{ span: 15, order: 1 }}
-        xl={{ span: 8, order: 1 }}
+        xl={{ span: 16, order: 1 }}
       >
         <Radio.Group
           className="radio-group-status"
