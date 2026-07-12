@@ -10,10 +10,10 @@ import { filterTasks, sortTasks } from "../utils/taskUtils";
 import { useOutletContext } from "react-router";
 
 const AllTasks = () => {
-  const { setModalState } = useOutletContext();
+  const { setModalState, messageApi } = useOutletContext();
   const allTasks = useSelector((state) => state.tasks.list);
   const [statusFilter, setStatusFilter] = useState(TASK_STATUS.ALL);
-  const [sortOrder, setSortOrder] = useState(SORT_ORDER.NONE);
+  const [sortOrder, setSortOrder] = useState(SORT_ORDER.NEWEST_FIRST);
 
   const changeStatusFilter = (e) => {
     setStatusFilter(e.target.value);
@@ -32,7 +32,11 @@ const AllTasks = () => {
         sortOrder={sortOrder}
         changeSortFilter={setSortOrder}
       />
-      <TaskList tasks={sortedTasks} setModalState={setModalState} />
+      <TaskList
+        tasks={sortedTasks}
+        setModalState={setModalState}
+        messageApi={messageApi}
+      />
     </div>
   );
 };

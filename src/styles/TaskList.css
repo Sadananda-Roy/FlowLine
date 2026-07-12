@@ -1,5 +1,5 @@
 .task-list {
   padding: 1rem;
-  padding-top: 0;
+  padding-top: 1em;
   overflow: auto;
 }

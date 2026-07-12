@@ -15,8 +15,10 @@
   .logo {
     display: flex;
     align-items: center;
-    h1 {
-      letter-spacing: 4px;
+    div {
+      font-size: 1.5rem;
+      font-weight: bolder;
+      letter-spacing: 2px;
     }
   }
   .navigate-tabs {
@@ -24,12 +26,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     /* text-align: center; */
     .btn-wrapper {
       /* gap: 1rem; */
       background-color: #f3f5f2;
       border-radius: 1rem;
       padding: 0.5rem;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       .all {
         margin-right: 1rem;
       }
@@ -42,6 +46,8 @@
       border: none;
       transition: none;
       box-shadow: none;
+
+      transition: transform 0.2s ease-out;
     }
     .tab-btn.active {
       font-weight: bolder;
@@ -56,13 +62,21 @@
     .tab-btn:hover {
       border: none !important;
       color: black !important;
+      transform: scale(1.04);
     }
   }
   .new-task-btn-container {
     text-align: right;
     .new-task-btn {
-      background-color: green;
+      background-color: #008000;
       border-radius: 0.7rem;
+      transition: transform 0.2s ease-out;
+
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    .new-task-btn:hover {
+      transform: scale(1.1);
+      background-color: #03b203;
     }
   }
 }

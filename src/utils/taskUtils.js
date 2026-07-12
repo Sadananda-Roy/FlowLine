@@ -24,6 +24,6 @@ export const sortTasks = (tasks, sort) => {
     case SORT_ORDER.DUE_DATE_DESC:
       return tasks.sort((a, b) => new Date(b.dueDate) - new Date(a.dueDate));
     default:
-      return tasks;
+      return tasks.reverse();
   }
 };

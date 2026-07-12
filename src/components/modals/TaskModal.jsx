@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import dayjs from "dayjs";
 import { formatDate } from "../../utils/date";
 
-const TaskModal = ({ modalState, onModalCancel }) => {
+const TaskModal = ({ modalState, onModalCancel, messageApi }) => {
   const { open, mode, task } = modalState;
   const [form] = Form.useForm();
   const dispatch = useDispatch();
@@ -25,9 +25,17 @@ const TaskModal = ({ modalState, onModalCancel }) => {
 
     if (mode === "add") {
       dispatch(addTask(payload));
+      messageApi.open({
+        type: "success",
+        content: `Task "${payload.title}" was created successfully`,
+      });
       handleModalCancel();
     } else {
       dispatch(updateTask(payload));
+      messageApi.open({
+        type: "success",
+        content: "Task was edited successfully",
+      });
       handleModalCancel();
     }
   };

@@ -1,6 +1,6 @@
 import { Badge } from "antd";
 import "../../styles/StatusPill.css";
-import { TASK_STATUS } from "../../constants/taskStatus";
+import { TASK_STATUS, TASK_STATUS_COLORS } from "../../constants/taskStatus";
 import { CheckCircleFilled } from "@ant-design/icons";
 
 const StatusPill = ({ status }) => {
@@ -13,13 +13,17 @@ const StatusPill = ({ status }) => {
       <span>
         {status === TASK_STATUS.COMPLETED ? (
           <CheckCircleFilled
-            style={{ paddingRight: "8px", fontSize: "14px", color: "green" }}
+            style={{
+              paddingRight: "4px",
+              fontSize: "14px",
+              color: TASK_STATUS_COLORS[status].text,
+            }}
           />
         ) : (
           <Badge className="badge" status={getBadgeStatus()} />
         )}
       </span>
-      {status}
+      <span style={{ color: TASK_STATUS_COLORS[status].text }}>{status}</span>
     </div>
   );
 };

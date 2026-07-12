@@ -1,6 +1,6 @@
 import { Button, Col, Image, Row } from "antd";
 import "../styles/NavBar.css";
-import FlowLineLogo from "../assets/FlowLineLogo_Large.png";
+import FlowLineLogo from "../assets/list.png";
 import { PlusSquareFilled } from "@ant-design/icons";
 import { useLocation, useNavigate } from "react-router";
 
@@ -13,16 +13,16 @@ const Navbar = ({ onAddTask }) => {
       <Col
         className="logo"
         xs={{ span: 12, order: 1 }}
-        lg={{ span: 8, order: 1 }}
+        md={{ span: 7, order: 1 }}
         xl={{ span: 8, order: 1 }}
       >
-        <Image width={60} src={FlowLineLogo} alt="Flowline Logo" />
-        <h1>Flowline</h1>
+        <Image width={50} src={FlowLineLogo} alt="Flowline Logo" />
+        <div>Flowline</div>
       </Col>
       <Col
         className="navigate-tabs"
         xs={{ span: 24, order: 3 }}
-        lg={{ span: 8, order: 2 }}
+        md={{ span: 12, order: 2 }}
         xl={{ span: 8, order: 2 }}
       >
         <div className="btn-wrapper">
@@ -45,7 +45,7 @@ const Navbar = ({ onAddTask }) => {
       <Col
         className="new-task-btn-container"
         xs={{ span: 12, order: 2 }}
-        lg={{ span: 8, order: 3 }}
+        md={{ span: 5, order: 3 }}
         xl={{ span: 8, order: 3 }}
       >
         <Button

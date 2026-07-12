@@ -1,4 +1,14 @@
 .status-pill {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: auto;
+  /* background-color: rgb(247, 247, 247); */
+  border-radius: 1rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 4px 0;
+  color: rgb(72, 71, 71);
   .badge {
     padding-right: 0.5rem;
   }

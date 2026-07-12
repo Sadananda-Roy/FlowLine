@@ -7,10 +7,10 @@ import {
 } from "../../utils/taskUtils";
 import { TASK_STATUS, TASK_STATUS_COLORS } from "../../constants/taskStatus";
 
-const SummaryCard = ({ status }) => {
+const SummaryCard = ({ status, bgColor }) => {
   const tasks = useSelector((state) => state.tasks.list);
   return (
-    <div className="summary-card">
+    <div className="summary-card" style={{ backgroundColor: bgColor }}>
       <div className="graph">
         {status === TASK_STATUS.ALL ? (
           <Tooltip
@@ -27,7 +27,7 @@ const SummaryCard = ({ status }) => {
               }}
               format={() => <div className="graph-percent"></div>}
               strokeWidth={10}
-              railColor={TASK_STATUS_COLORS[TASK_STATUS.PENDING]}
+              railColor={TASK_STATUS_COLORS[TASK_STATUS.PENDING].text}
               type="circle"
             />
           </Tooltip>
@@ -37,7 +37,7 @@ const SummaryCard = ({ status }) => {
             size="small"
             type="circle"
             percent={getPercentByStatus(tasks, status)}
-            strokeColor={TASK_STATUS_COLORS[status]}
+            strokeColor={TASK_STATUS_COLORS[status].text}
             strokeWidth={10}
             format={(percent) => (
               <div className="graph-percent">{percent}%</div>

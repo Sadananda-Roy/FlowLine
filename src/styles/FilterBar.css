@@ -7,7 +7,7 @@
   padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #f0f0f0;
+  /* border-bottom: 1px solid #f0f0f0; */
   align-items: center;
   .radio-group-status {
     .radio-btn {
@@ -15,6 +15,10 @@
       margin: 0.2rem;
       border-radius: 1rem;
       font-size: 0.8rem;
+
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      /* transition: transform 0.2s ease-out; */
       /* font-weight: 700; */
     }
     .radio-btn.checked {
@@ -29,6 +33,7 @@
     }
     .radio-btn:hover {
       font-size: 0.8rem;
+      /* transform: scale(1.01); */
       /* font-weight: 700; */
       /* color: black; */
       /* color: white; */
@@ -45,8 +50,10 @@
     }
     .input-select {
       border-radius: 1rem;
-      padding: 0 1rem;
+      padding: auto 1rem;
       background-color: #f3f5f2;
+      font-size: 0.8rem;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
   }
 }

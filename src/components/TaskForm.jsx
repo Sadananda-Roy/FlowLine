@@ -13,42 +13,42 @@ const TaskForm = ({ form, onFinish }) => {
       // onFinishFailed={onFinishFailed}
     >
       <Form.Item
-        className="title-item"
+        className="label title-item"
         layout="vertical"
         label="Title"
         name="title"
         rules={[{ required: true, message: "Title is required" }]}
       >
         <Input
-          size="large"
           className="title-input"
-          placeholder="Please enter a title"
+          size="large"
+          placeholder="e.g. Wire up Redux store"
         />
       </Form.Item>
       <Form.Item
-        className="description-item"
+        className="label description-item"
         layout="vertical"
         label="Description"
         name="description"
         rules={[{ required: true, message: "Description is required" }]}
       >
         <TextArea
+          className="description-input"
           size="large"
           rows={4}
-          className="description-input"
           placeholder="Give a description"
         />
       </Form.Item>
       <Form.Item
-        className="status-item"
+        className="label status-item"
         layout="vertical"
         label="Status"
         name="status"
         rules={[{ required: true, message: "Status is required" }]}
       >
         <Radio.Group
-          size="large"
           className="status-radio-group"
+          size="large"
           // defaultValue={statusFilter}
           // onChange={changeStatusFilter}
         >
@@ -62,13 +62,13 @@ const TaskForm = ({ form, onFinish }) => {
         </Radio.Group>
       </Form.Item>
       <Form.Item
-        className="date-item"
+        className="label date-item"
         layout="vertical"
         label="Due Date"
         name="dueDate"
-        rules={[{ required: true, message: "Date is required" }]}
+        rules={[{ required: true, message: "Due date is required" }]}
       >
-        <DatePicker size="large" />
+        <DatePicker className="due-datepicker" size="large" />
       </Form.Item>
     </Form>
   );

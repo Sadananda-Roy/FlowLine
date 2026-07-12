@@ -1,11 +1,14 @@
 .summary-card {
   display: flex;
   align-items: flex-center;
-  border: 1px solid #dee4e0;
-  background-color: #f3f5f2;
-  border-radius: 1rem;
+  /* border: 1px solid #dee4e0; */
+  /* background-color: #f3f5f2; */
+  border-radius: 10rem;
   gap: 1rem;
   padding: 1rem;
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
   .details {
     .status {
       font-size: 0.8rem;

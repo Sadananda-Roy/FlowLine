@@ -9,7 +9,7 @@ import { useOutletContext } from "react-router";
 
 const CompletedTasks = () => {
   const { setModalState } = useOutletContext();
-  const [sortOrder, setSortOrder] = useState(SORT_ORDER.NONE);
+  const [sortOrder, setSortOrder] = useState(SORT_ORDER.NEWEST_FIRST);
 
   const allTasks = useSelector((state) => state.tasks.list);
 

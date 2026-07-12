@@ -1,14 +1,32 @@
 :root {
   --navbar-height: 5rem;
 }
-@media (max-width: 575px) {
+.css-var-root.ant-input-css-var {
+  --ant-input-active-border-color: grey;
+  --ant-input-hover-border-color: grey;
+  --ant-input-active-shadow: ;
+}
+.css-var-root.ant-picker-css-var {
+  --ant-date-picker-active-border-color: grey;
+  --ant-date-picker-hover-border-color: grey;
+  --ant-date-picker-active-shadow: none;
+}
+.css-var-root.ant-select-css-var {
+  --ant-select-active-border-color: grey;
+  --ant-select-hover-border-color: grey;
+  --ant-select-active-shadow: none;
+  --ant-select-active-outline-color: none;
+}
+@media (max-width: 767px) {
   :root {
-    --navbar-height: 4rem;
+    --navbar-height: 9rem;
   }
 }
 
 * {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
 }
 *,
 *::before,
@@ -24,4 +42,37 @@ body,
   min-height: 100%;
   background-color: #ffffff;
   /* overflow: hidden; */
+}
+
+/* Custom Scrollbar  */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c7c7c7 transparent;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
 }

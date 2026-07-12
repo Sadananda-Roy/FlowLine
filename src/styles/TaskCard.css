@@ -1,31 +1,98 @@
 .task-card {
-  border: 1px solid #dee4e0;
-  background-color: #f3f5f2;
+  /* border: 1px solid #dee4e0; */
+  /* background-color: #f3f5f2; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
+  min-height: 11rem;
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
   .title-container {
+    /* position: sticky;
+    top: 0; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .status {
-      text-align: right;
+    .title {
+      font-size: 1.0625rem;
+      font-weight: 500;
     }
   }
   .description {
     padding-top: 1rem;
+    font-size: 0.85rem;
+    color: rgb(95, 95, 95);
+    /* font-weight: 100; */
+    /* overflow-y: auto; */
+  }
+  .title.completed {
+    text-decoration: line-through;
+    text-decoration-color: #2e7d32;
+    color: #2e7d32;
   }
   .footer {
+    /* position: sticky;
+    bottom: 0; */
+    padding-top: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: end;
-    padding-top: 1rem;
     .action-buttons {
       .edit {
         margin-right: 0.5rem;
+        /* background-color: rgb(234, 251, 103); */
+        border: none;
+        transition: transform 0.2s ease-out;
+      }
+      .delete {
+        /* background-color: rgb(250, 117, 117); */
+        border: none;
+        transition: transform 0.2s ease-out;
+      }
+      .edit:hover {
+        background-color: rgb(157, 143, 248);
+        color: white;
+        transform: scale(1.1);
+      }
+      .delete:hover {
+        background-color: rgb(247, 96, 96);
+        color: white;
+        transform: scale(1.1);
+      }
+    }
+    .due-date {
+      .done {
+        /* display: inline-block; */
+        padding: 4px 12px;
+        border-radius: 1rem;
+        background-color: #2e7d32;
+        color: white;
+      }
+      .due {
+        color: rgb(122, 121, 121);
+        font-size: 0.7rem;
+        margin-bottom: 0.5rem;
+      }
+      .remaining-time {
+        /* text-align: center; */
+        font-size: 0.6rem;
+        font-weight: 500;
+        /* background-color: orange; */
+        padding: 4px;
+        padding-right: 1rem;
+        border-radius: 0 1rem 1rem 0;
+        letter-spacing: 1px;
+        border: 0.1px solid;
+        /* margin-top: 1rem; */
       }
     }
   }
+}
+.task-card:hover {
+  transform: scale(1.01);
+  /* border: 2px solid rgb(124, 124, 124); */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
