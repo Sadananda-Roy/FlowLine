@@ -3,7 +3,10 @@ import "../styles/TaskCard.css";
 import StatusPill from "./ui/StatusPill";
 import { DeleteFilled, EditFilled } from "@ant-design/icons";
 
-const TaskCard = ({ data }) => {
+const TaskCard = ({ data, setModalState }) => {
+  const handleEdit = () => {
+    setModalState({ open: true, mode: "edit", task: data });
+  };
   return (
     <div className="task-card">
       <div className="title-container">
@@ -14,7 +17,12 @@ const TaskCard = ({ data }) => {
       <div className="footer">
         <div className="due-date">Due {data.dueDate}</div>
         <div className="action-buttons">
-          <Button className="edit" size="small" icon={<EditFilled />} />
+          <Button
+            className="edit"
+            size="small"
+            icon={<EditFilled />}
+            onClick={handleEdit}
+          />
           <Button className="delete" size="small" icon={<DeleteFilled />} />
         </div>
       </div>

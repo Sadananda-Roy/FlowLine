@@ -4,7 +4,7 @@ import FlowLineLogo from "../assets/FlowLineLogo_Large.png";
 import { PlusSquareFilled } from "@ant-design/icons";
 import { useLocation, useNavigate } from "react-router";
 
-const Navbar = () => {
+const Navbar = ({ onAddTask }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const currRoute = location.pathname;
@@ -36,6 +36,7 @@ const Navbar = () => {
           className="new-task-btn"
           type="primary"
           icon={<PlusSquareFilled />}
+          onClick={onAddTask}
         >
           New
         </Button>
