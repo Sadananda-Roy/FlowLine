@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import taskMocks from "../../mocks/taskMocks";
+// import taskMocks from "../../mocks/taskMocks";
+import { loadTasks } from "../../services/storage";
 
-const initialState = { list: taskMocks };
+const initialState = { list: loadTasks() };
 
 export const taskSlice = createSlice({
   name: "task",

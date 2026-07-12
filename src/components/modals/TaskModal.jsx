@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addTask, updateTask } from "../../features/tasks/taskSlice";
 import { useEffect } from "react";
 import dayjs from "dayjs";
+import { formatDate } from "../../utils/date";
 
 const TaskModal = ({ modalState, onModalCancel }) => {
   const { open, mode, task } = modalState;
@@ -19,7 +20,7 @@ const TaskModal = ({ modalState, onModalCancel }) => {
     const payload = {
       ...values,
       id: mode === "add" ? crypto.randomUUID() : task.id,
-      dueDate: values.dueDate.format("YYYY-MM-DD"),
+      dueDate: formatDate(values.dueDate),
     };
 
     if (mode === "add") {

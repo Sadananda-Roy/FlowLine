@@ -2,10 +2,16 @@ import { Button } from "antd";
 import "../styles/TaskCard.css";
 import StatusPill from "./ui/StatusPill";
 import { DeleteFilled, EditFilled } from "@ant-design/icons";
+import { useDispatch } from "react-redux";
+import { deleteTask } from "../features/tasks/taskSlice";
 
 const TaskCard = ({ data, setModalState }) => {
+  const dispatch = useDispatch();
   const handleEdit = () => {
     setModalState({ open: true, mode: "edit", task: data });
+  };
+  const handleDelete = () => {
+    dispatch(deleteTask(data.id));
   };
   return (
     <div className="task-card">
@@ -23,7 +29,12 @@ const TaskCard = ({ data, setModalState }) => {
             icon={<EditFilled />}
             onClick={handleEdit}
           />
-          <Button className="delete" size="small" icon={<DeleteFilled />} />
+          <Button
+            onClick={handleDelete}
+            className="delete"
+            size="small"
+            icon={<DeleteFilled />}
+          />
         </div>
       </div>
     </div>
