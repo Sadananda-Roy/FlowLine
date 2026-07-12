@@ -9,7 +9,7 @@ export const getTaskCountByStatus = (tasks, status) => {
 };
 
 export const getPercentByStatus = (tasks, status) => {
-  return (getTaskCountByStatus(tasks, status) / tasks.length) * 100;
+  return Math.round((getTaskCountByStatus(tasks, status) / tasks.length) * 100);
 };
 
 export const filterTasks = (tasks, filter) =>

@@ -1,5 +1,5 @@
 import { Radio, Row, Select } from "antd";
-import { TASK_STATUS_OPTIONS } from "../constants/taskStatus";
+import { TASK_STATUS, TASK_STATUS_OPTIONS } from "../constants/taskStatus";
 import "../styles/FilterBar.css";
 import { SORT_ORDER_OPTIONS } from "../constants/sortOrder";
 
@@ -8,7 +8,11 @@ const FilterBar = ({
   changeStatusFilter,
   changeSortFilter,
   sortOrder,
+  showAllStatuses = true,
 }) => {
+  const select_options = showAllStatuses
+    ? TASK_STATUS_OPTIONS
+    : [TASK_STATUS.COMPLETED];
   return (
     <Row className="filter-bar">
       <Radio.Group
@@ -16,7 +20,7 @@ const FilterBar = ({
         defaultValue={statusFilter}
         onChange={changeStatusFilter}
       >
-        {TASK_STATUS_OPTIONS.map((item) => (
+        {select_options.map((item) => (
           <Radio.Button
             className={`radio-btn ${item === statusFilter ? "checked" : ""}`}
             value={item}

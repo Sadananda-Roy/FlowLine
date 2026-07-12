@@ -18,6 +18,9 @@
       border: none;
       font-size: 0.8rem;
     }
+    .radio-btn.hidden {
+      display: none;
+    }
     .radio-btn:hover {
       font-size: 0.8rem;
       /* font-weight: 700; */
