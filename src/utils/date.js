@@ -20,17 +20,30 @@ export const getRemainingTime = (dueDate) => {
   let value;
 
   if (days > 0) {
-    value = `${days} day${days > 1 ? "s" : ""}`;
+    value = `${days}d`;
+
+    if (hours > 0) {
+      value += ` ${hours}h`;
+    }
   } else if (hours > 0) {
-    value = `${hours} hour${hours > 1 ? "s" : ""}`;
+    value = `${hours}h`;
+
+    if (minutes > 0) {
+      value += ` ${minutes}m`;
+    }
   } else if (minutes > 0) {
-    value = `${minutes} minute${minutes > 1 ? "s" : ""}`;
+    value = `${minutes}m`;
   } else {
-    return "Due now";
+    value = "Due now";
   }
 
   return {
-    result: isOverdue ? `Overdue by ${value}` : `${value} remaining`,
+    result:
+      value === "Due now"
+        ? value
+        : isOverdue
+          ? `Overdue by ${value}`
+          : `${value} remaining`,
     days: isOverdue ? -days : days,
   };
 };
