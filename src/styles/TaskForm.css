@@ -38,3 +38,13 @@
     }
   }
 }
+
+@media (max-width: 410px) {
+  .task-form {
+    .status-radio-group {
+      label {
+        font-size: 0.6rem;
+      }
+    }
+  }
+}

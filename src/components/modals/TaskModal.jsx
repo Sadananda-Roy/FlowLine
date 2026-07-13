@@ -5,6 +5,7 @@ import { addTask, updateTask } from "../../features/tasks/taskSlice";
 import { useEffect } from "react";
 import dayjs from "dayjs";
 import { formatDate } from "../../utils/date";
+import "../../styles/TaskModal.css";
 
 const TaskModal = ({ modalState, onModalCancel, messageApi }) => {
   const { open, mode, task } = modalState;
@@ -56,11 +57,13 @@ const TaskModal = ({ modalState, onModalCancel, messageApi }) => {
 
   return (
     <Modal
+      className="task-modal"
       title={`${mode === "edit" ? "Edit task" : "Add new task"}`}
       open={open}
       okText={mode === "add" ? "Create" : "Save Changes"}
       onOk={() => form.submit()}
       onCancel={handleModalCancel}
+      mask={{ blur: true }}
     >
       <TaskForm form={form} onFinish={handleFormFinish} />
     </Modal>

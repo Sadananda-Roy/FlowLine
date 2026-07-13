@@ -27,7 +27,7 @@ const TaskList = ({ tasks, setModalState, messageApi }) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
             <TaskCard
               data={item}
