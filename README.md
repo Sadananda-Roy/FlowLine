@@ -1,16 +1,120 @@
-# React + Vite
+# Flowline
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Flowline is a modern task management dashboard built with React, Redux Toolkit and Ant Design. It helps users organize tasks efficiently with filtering, sorting, due date tracking and a clean, responsive interface.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 📋 Task Management
 
-## React Compiler
+- Add new tasks
+- Edit existing tasks
+- Delete tasks with confirmation
+- Mark tasks with different statuses:
+  - Pending
+  - In Progress
+  - Completed
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 📊 Dashboard Summary
 
-## Expanding the ESLint configuration
+- Summary cards showing:
+  - Pending Tasks
+  - In Progress Tasks
+  - Completed Tasks
+- Dynamic counts update automatically
+- Progress indicators with color coding
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🔍 Filtering & Sorting
+
+- Filter tasks by status
+- Dedicated Completed Tasks page
+- Sort tasks by due date
+  - Newest First
+  - Earliest Due
+  - Latest Due
+
+### ⏰ Due Date Indicators
+
+- Human-readable due dates
+- Remaining time display
+- Overdue detection
+- Color-coded urgency levels:
+  - Far
+  - Upcoming
+  - Soon
+  - Urgent
+
+### 💾 Local Storage
+
+- Tasks persist across browser refreshes
+- Automatic synchronization with localStorage
+
+### 📱 Responsive Design
+
+- Mobile-friendly layout
+- Responsive navigation
+- Adaptive dashboard cards
+- Optimized task list for different screen sizes
+
+### 🎨 UI/UX
+
+- Modern dashboard interface
+- Sticky navigation bar
+- Sticky filter bar
+- Smooth hover animations
+- Status badges
+- Consistent color palette
+- Material-inspired design
+
+---
+
+## 🛠 Tech Stack
+
+- React 19
+- Redux Toolkit
+- React Router
+- Ant Design
+- Day.js
+- CSS
+- Vite
+
+---
+
+## 🚀 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/Sadananda-Roy/FlowLine
+```
+
+Navigate to the project
+
+```bash
+cd flowline
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the development server
+
+```bash
+npm run dev
+```
+
+Build for production
+
+```bash
+npm run build
+```
+
+---
+
+## 🌐 Live Demo
+
+https://flowline-pi.vercel.app/
+
+---
